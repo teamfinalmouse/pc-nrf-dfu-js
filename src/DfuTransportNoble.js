@@ -68,7 +68,6 @@ export default class DfuTransportNoble extends DfuTransportPrn {
         this.mtu = 20;
     }
 
-
     // Given a command (including opcode), perform SLIP encoding and send it
     // through the wire.
     writeCommand(bytes) {

@@ -145,7 +145,6 @@ export const ErrorMessages = {
     [ErrorCode.ERROR_UNABLE_FIND_PORT]: 'Unable to find port.',
 };
 
-
 // Error messages for the known response codes.
 // See http://infocenter.nordicsemi.com/index.jsp?topic=%2Fcom.nordic.infocenter.sdk5.v14.2.0%2Fgroup__nrf__dfu__rescodes.html
 // as well as the response codes at
@@ -167,7 +166,6 @@ export const ResponseErrorMessages = {
     [ErrorCode.ERROR_RSP_OPERATION_FAILED]: 'Operation failed.',
 //  0x0B: extended error, will read next byte from the response and use it as extended error code
 };
-
 
 // Error messages for the known extended error codes.
 // See http://infocenter.nordicsemi.com/index.jsp?topic=%2Fcom.nordic.infocenter.sdk5.v14.2.0%2Fgroup__sdk__nrf__dfu__transport.html
