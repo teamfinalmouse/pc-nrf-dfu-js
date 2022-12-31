@@ -43,7 +43,7 @@ import DfuTransportSerial from './DfuTransportSerial';
 import { DfuError, ErrorCode } from './DfuError';
 
 const debug = Debug('dfu:usbserial');
-const SerialPort = require('serialport');
+const { SerialPort } = require('serialport');
 
 /**
  * USB serial DFU transport. Supports Nordic USB devices.
@@ -109,7 +109,7 @@ export default class DfuTransportUsbSerial extends DfuTransportSerial {
         }
         return this.findPort()
             .then(port => {
-                this.port = new SerialPort(port.path, { baudRate: 115200, autoOpen: false });
+                this.port = new SerialPort({ path: port.path, baudRate: 115200, autoOpen: false });
                 return super.open();
             });
     }
