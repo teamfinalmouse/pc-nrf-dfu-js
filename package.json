@@ -6,7 +6,7 @@
   "main": "dist/nrf-dfu.cjs.js",
   "module": "dist/nrf-dfu.cjs.js",
   "author": "Iván Sánchez Ortega <ivan@sanchezortega.es>",
-  "license": "Propietary",
+  "license": "Proprietary",
   "scripts": {
     "prepare": "rollup -c rollup.config.js",
     "rollup": "rollup -c rollup.config.js",
