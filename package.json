@@ -1,12 +1,12 @@
 {
   "name": "pc-nrf-dfu-js",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "description": "JS implementation of the nRF DFU protocol",
   "esnext:main": "src/index.js",
   "main": "dist/nrf-dfu.cjs.js",
   "module": "dist/nrf-dfu.cjs.js",
-  "author": "Iván Sánchez Ortega <ivan@sanchezortega.es>",
-  "license": "Proprietary",
+  "author": "Iván Sánchez Ortega <ivan@sanchezortega.es>, Maxime Vincent <maxime@finalmouse.com>",
+  "license": "UNLICENSED",
   "scripts": {
     "prepare": "rollup -c rollup.config.js",
     "rollup": "rollup -c rollup.config.js",

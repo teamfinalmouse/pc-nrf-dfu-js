@@ -42,6 +42,7 @@ import crc32 from './util/crc32';
 import { DfuError, ErrorCode } from './DfuError';
 
 const debug = require('debug')('dfu:transport');
+const events = require('events');
 
 /**
  * Implements the logic common to all transports, but not the transport itself.
@@ -55,6 +56,7 @@ export default class DfuAbstractTransport {
         if (this.constructor === DfuAbstractTransport) {
             throw new DfuError(ErrorCode.ERROR_CAN_NOT_INIT_ABSTRACT_TRANSPORT);
         }
+        this.events = new events.EventEmitter();
     }
 
     // Restarts the DFU procedure by sending a create command of
@@ -154,6 +156,9 @@ export default class DfuAbstractTransport {
         return this.sendPayloadChunk(type, bytes, start, end, chunkSize, crcSoFar)
             .then(() => this.executeObject())
             .then(() => {
+                // Update progress through callback
+                this.events.emit('DfuUpdate', { type, done: end, total: bytes.length });
+
                 if (end >= bytes.length) {
                     debug(`Sent ${end} bytes, this payload type is finished`);
                     return Promise.resolve();
